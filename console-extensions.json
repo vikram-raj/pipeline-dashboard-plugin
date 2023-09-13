@@ -1,16 +1,5 @@
 [
 	{
-    "type": "console.flag/model",
-    "properties": {
-      "model": {
-        "group": "tekton.dev",
-        "version": "v1",
-        "kind": "Pipeline"
-      },
-      "flag": "OPENSHIFT_PIPELINE"
-    }
-  },
-	{
     "type": "console.model-metadata",
     "properties": {
       "model": {
@@ -20,38 +9,40 @@
       },
       "color": "#38812f",
       "label": "%pipelines-plugin~Pipeline%",
-      "labelPlural": "%pipelines-plugin~Pipelines%",
+      "labelPlural": "%pipelines-plugin~PipelineMetrics%",
       "abbr": "PL"
     }
   },
 	{
-		"type": "console.tab/horizontalNav",
-		"properties": {
-			"model": {
-				"version": "v1",
-				"kind": "Pipeline"
-			},
-			"page": {
-				"name": "%container-security~Vulnerabilities%",
-				"href": "metrics"
-			},
-			"component": { "$codeRef": "pipelineMetricsComponent.PipelineMetrics" }
-		}
-	},
+    "type": "console.tab/horizontalNav",
+    "properties": {
+      "model": {
+        "group": "tekton.dev",
+        "version": "v1",
+        "kind": "Pipeline"
+      },
+      "page": {
+        "name": "%pipelines-plugin~Metrics%",
+        "href": "metrics"
+      },
+      "component": { "$codeRef": "pipelineMetricsComponent.PipelineMetrics" }
+    }
+  },
   {
-		"type": "console.tab/horizontalNav",
-		"properties": {
-			"model": {
-				"version": "v1beta1",
-				"kind": "Pipeline"
-			},
-			"page": {
-				"name": "%container-security~Vulnerabilities%",
-				"href": "metrics"
-			},
-			"component": { "$codeRef": "pipelineMetricsComponent.PipelineMetrics" }
-		}
-	},
+    "type": "console.tab/horizontalNav",
+    "properties": {
+      "model": {
+        "group": "tekton.dev",
+        "version": "v1beta1",
+        "kind": "Pipeline"
+      },
+      "page": {
+        "name": "%pipelines-plugin~Metrics%",
+        "href": "metrics"
+      },
+      "component": { "$codeRef": "pipelineMetricsComponent.PipelineDashboard" }
+    }
+  },
   {
     "type": "console.navigation/href",
     "properties": {
@@ -70,7 +61,7 @@
       "path": ["/dashboard/ns/:ns", "/dashboard/all-namespaces"],
       "exact": false,
       "component": {
-        "$codeRef": "pipelineMetricsComponent.PipelineMetrics"
+        "$codeRef": "pipelineMetricsComponent.PipelineDashboard"
       }
     }
   },
