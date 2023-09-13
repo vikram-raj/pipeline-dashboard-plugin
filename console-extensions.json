@@ -1,0 +1,88 @@
+[
+	{
+    "type": "console.flag/model",
+    "properties": {
+      "model": {
+        "group": "tekton.dev",
+        "version": "v1",
+        "kind": "Pipeline"
+      },
+      "flag": "OPENSHIFT_PIPELINE"
+    }
+  },
+	{
+    "type": "console.model-metadata",
+    "properties": {
+      "model": {
+        "group": "tekton.dev",
+        "version": "v1",
+        "kind": "Pipeline"
+      },
+      "color": "#38812f",
+      "label": "%pipelines-plugin~Pipeline%",
+      "labelPlural": "%pipelines-plugin~Pipelines%",
+      "abbr": "PL"
+    }
+  },
+	{
+		"type": "console.tab/horizontalNav",
+		"properties": {
+			"model": {
+				"version": "v1",
+				"kind": "Pipeline"
+			},
+			"page": {
+				"name": "%container-security~Vulnerabilities%",
+				"href": "metrics"
+			},
+			"component": { "$codeRef": "pipelineMetricsComponent.PipelineMetrics" }
+		}
+	},
+  {
+		"type": "console.tab/horizontalNav",
+		"properties": {
+			"model": {
+				"version": "v1beta1",
+				"kind": "Pipeline"
+			},
+			"page": {
+				"name": "%container-security~Vulnerabilities%",
+				"href": "metrics"
+			},
+			"component": { "$codeRef": "pipelineMetricsComponent.PipelineMetrics" }
+		}
+	},
+  {
+    "type": "console.navigation/href",
+    "properties": {
+      "id": "dashboard",
+      "perspective": "dev",
+      "section": "resources",
+      "insertAfter": "project",
+      "name": "%pipelines-plugin~Dashboard%",
+      "href": "/dashboard",
+      "namespaced": true
+    }
+  },
+  {
+    "type": "console.page/route",
+    "properties": {
+      "path": ["/dashboard/ns/:ns", "/dashboard/all-namespaces"],
+      "exact": false,
+      "component": {
+        "$codeRef": "pipelineMetricsComponent.PipelineMetrics"
+      }
+    }
+  },
+  {
+    "type": "console.navigation/href",
+    "properties": {
+      "id": "pipelinedashboard",
+      "perspective": "admin",
+      "section": "pipelines",
+      "name": "%pipelines-plugin~Dashboard%",
+      "href": "/dashboard",
+      "namespaced": true
+    }
+  }
+]
